@@ -26,8 +26,8 @@ class App extends Component {
 
   render() {
     const { todos } = this.state;
-
-    const completedTodos = todos.reduce(
+    const totalTodoCount = todos.length;
+    const completedTodoCount = todos.reduce(
       (total, todo) => (todo.completed ? total + 1 : total),
       0
     );
@@ -37,8 +37,8 @@ class App extends Component {
         {/* <Counter initialValue={10} /> */}
         {/* <Dropdown /> */}
         {/* <ColorPicker options={colorPickerOptions} /> */}
-        <p>Общее кол-во: {todos.length}</p>
-        <p>Кол-во выполненых: {completedTodos}</p>
+        <p>Общее кол-во: {totalTodoCount}</p>
+        <p>Кол-во выполненых: {completedTodoCount}</p>
         <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
       </>
     );
