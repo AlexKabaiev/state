@@ -11,7 +11,7 @@ import './TodoList.css';
 //   </ul>
 // );
 
-const TodoList = ({ todos }) => (
+const TodoList = ({ todos, onDeleteTodo }) => (
   <ul className="TodoList">
     {todos.map(({ id, text }) => (
       <li
@@ -25,7 +25,7 @@ TodoList__text"
         >
           {text}
         </p>
-        <button>удалить</button>
+        <button onClick={() => onDeleteTodo(id)}>удалить</button>
       </li>
     ))}
   </ul>
